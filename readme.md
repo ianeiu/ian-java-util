@@ -16,7 +16,6 @@
 * `com.ianeiu.utils.CookieUtils`cookie
 * `com.ianeiu.utils.date`		date
 * `com.ianeiu.utils.encrypt`	加密
-* `com.ianeiu.utils.enumutil`	枚举
 * `com.ianeiu.utils.EmailUtil`	email
 * `com.ianeiu.utils.ExcelUtil`	excel
 * `com.ianeiu.utils.ExceptionUtil`异常
@@ -40,3 +39,7 @@
 * `com.ianeiu.utils.TxtUtil`	TXT
 * `com.ianeiu.utils.ws`			ws客户端
 * `com.ianeiu.utils.ZipUtil`	ZIP
+
+* `com.ianeiu.demo.gson`	    gsonDemo
+* `com.ianeiu.demo.fastjson`	fastjsonDemo
+* `com.ianeiu.demo.jodatime`	jodaTest

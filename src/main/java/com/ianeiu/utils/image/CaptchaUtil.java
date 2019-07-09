@@ -1,19 +1,15 @@
 package com.ianeiu.utils.image;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
+import com.ianeiu.utils.image.gif.GifEncoder;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Random;
-
-import javax.imageio.ImageIO;
-
-import com.wm.utils.image2.GIF.GifEncoder;
 
 /**
  * 具体用于实现生成验证码图片的方法
@@ -35,10 +31,12 @@ public final class CaptchaUtil {
      */
     protected static Color color(int fc, int bc)
     {
-        if (fc > 255)
+        if (fc > 255){
             fc = 255;
-        if (bc > 255)
+        }
+        if (bc > 255){
             bc = 255;
+        }
         int r = fc + num(bc - fc);
         int g = fc + num(bc - fc);
         int b = fc + num(bc - fc);

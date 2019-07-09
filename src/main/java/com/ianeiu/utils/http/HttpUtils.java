@@ -1,9 +1,8 @@
 package com.ianeiu.utils.http;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import com.google.common.collect.Lists;
+import com.ianeiu.utils.http.handler.AbstractHttpResultHandler;
+import com.ianeiu.utils.http.handler.ContentToStringHandler;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -18,9 +17,9 @@ import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.Lists;
-import com.wm.utils.http.handler.AbstractHttpResultHandler;
-import com.wm.utils.http.handler.ContentToStringHandler;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class HttpUtils {
 

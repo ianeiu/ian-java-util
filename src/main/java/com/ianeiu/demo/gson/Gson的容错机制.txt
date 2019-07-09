@@ -1,0 +1,22 @@
+Gson的容错机制:
+   为什么要容错了,在javaBean中声明了int类型的age 如果服务端 返回的是"" 空字符串怎么办呢？崩溃？
+   如果json格式不规范如 {name=zhangsan,age:26,hobby=null}  发现不是普通的key value
+  容错实现方式1：
+  1:创建Gson的方式
+  gson = new GsonBuilder()  
+                  .setLenient()// json宽松  
+                  .create();  
+  
+  2:使用JsonReader
+  JsonReader jsonReader = gson.newJsonReader(value.charStream());
+
+  3:自定义TypeAdapter   [示例8]
+   
+  4:使用注解JsonAdapter,其实也是自定义Adapter		[示例9]
+  
+  [
+  	  3,4归为一类,都属于自定义adapter,但是3与gson绑定,4使用注解和字段绑定
+      TypeAdapter倾向于整体,注解JsonAdapter的方式倾向于字段
+      
+      	上面的方式保险是很保险，但是需要维护的地方多，代码量大，我们介绍另外一种方式:JsonSerializer与JsonDeserializer  	[示例10]
+  ]
