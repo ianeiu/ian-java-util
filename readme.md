@@ -39,6 +39,7 @@
 * `com.ianeiu.utils.TxtUtil`	TXT
 * `com.ianeiu.utils.ws`			ws客户端
 * `com.ianeiu.utils.ZipUtil`	ZIP
+* `com.ianeiu.utils.paramvalid`	参数校验
 
 * `com.ianeiu.demo.gson`	    gsonDemo
 * `com.ianeiu.demo.fastjson`	fastjsonDemo
