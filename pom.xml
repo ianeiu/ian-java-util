@@ -204,6 +204,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- hutool -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.10</version>
+        </dependency>
+
     </dependencies>
 
     <build>
