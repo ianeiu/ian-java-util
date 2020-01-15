@@ -211,6 +211,19 @@
             <version>4.5.10</version>
         </dependency>
 
+        <!--PDF转化工具-->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xhtmlrenderer</groupId>
+            <artifactId>core-renderer</artifactId>
+            <version>R8</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
