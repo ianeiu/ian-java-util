@@ -27,8 +27,8 @@ public class Demo02DateTime {
         //=====================================使用对象=====================================
         //年，结果：2017
         int year = dateTime.year();
-        //季度（非季节），结果：Season.SPRING
-        Season season = dateTime.seasonEnum();
+        //季度（非季节），结果：Quarter.Q1
+        Quarter quarter = dateTime.quarterEnum();
         //月份，结果：Month.JANUARY
         Month month = dateTime.monthEnum();
         //日，结果：5

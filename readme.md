@@ -12,6 +12,7 @@
 * `com.ianeiu.utils.CheckUtil`	对象检查
 * `com.ianeiu.utils.ChinesUtil`	中文
 * `com.ianeiu.utils.ClassUtil`	类操作
+* `com.ianeiu.utils.ColorUtil`	颜色相关的工具类
 * `com.ianeiu.utils.ConvertUtil`类型转换
 * `com.ianeiu.utils.CookieUtils`cookie
 * `com.ianeiu.utils.date`		date
@@ -24,8 +25,8 @@
 * `com.ianeiu.utils.FileUtil`	文件
 * `com.ianeiu.utils.FTPUtil`	FTP
 * `com.ianeiu.utils.http`		http
-* `com.ianeiu.utils.image`		image
 * `com.ianeiu.utils.GitUtils`	git
+* `com.ianeiu.utils.ImageUtil`	图片相关的操作
 * `com.ianeiu.utils.ListUtils`	list
 * `com.ianeiu.utils.MapCoordinateUtil`	经纬度
 * `com.ianeiu.utils.NumberUtil`	数字操作

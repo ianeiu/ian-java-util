@@ -1,8 +1,5 @@
-package com.ianeiu.utils.image;
+package com.ianeiu.utils;
 
-
-
-import com.ianeiu.utils.FileUtil;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReadParam;
@@ -12,7 +9,12 @@ import java.awt.*;
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorConvertOp;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.List;
 
@@ -20,7 +22,7 @@ import java.util.List;
  * 图片相关的操作
  * @author adam.胡升阳
  */
-public final class OperateImage {
+public final class ImageUtil {
     // 图形交换格式
     public static String IMAGE_TYPE_GIF = "gif";
     // 联合照片专家组
@@ -89,7 +91,7 @@ public final class OperateImage {
             // 构造Image对象
             BufferedImage srcBuffer = ImageIO.read(file);
             // 按比例缩减图像
-            BufferedImage imageBuffer = ImageUtil.imageShrinkRatio(srcBuffer, widthRatio, heightRatio);
+            BufferedImage imageBuffer = imageShrinkRatio(srcBuffer, widthRatio, heightRatio);
             ImageIO.write(imageBuffer,prefix,out);
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,7 +114,7 @@ public final class OperateImage {
             // 构造Image对象
             BufferedImage srcBuffer = ImageIO.read(file);
             // 按比例缩减图像
-            BufferedImage imageBuffer = ImageUtil.imageShrinkRatio(srcBuffer, ratio, ratio);
+            BufferedImage imageBuffer = imageShrinkRatio(srcBuffer, ratio, ratio);
             ImageIO.write(imageBuffer,prefix,out);
         } catch (Exception e) {
             e.printStackTrace();
@@ -136,7 +138,7 @@ public final class OperateImage {
             // 构造Image对象
             BufferedImage srcBuffer = ImageIO.read(file);
             // 按比例缩减图像
-            BufferedImage imageBuffer = ImageUtil.imageMagnifyRatio(srcBuffer, widthRatio, heightRatio);
+            BufferedImage imageBuffer = imageMagnifyRatio(srcBuffer, widthRatio, heightRatio);
             ImageIO.write(imageBuffer, prefix, out);
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,7 +162,7 @@ public final class OperateImage {
             // 构造Image对象
             BufferedImage srcBuffer = ImageIO.read(file);
             // 按比例缩减图像
-            BufferedImage imageBuffer = ImageUtil.imageMagnifyRatio(srcBuffer, ratio, ratio);
+            BufferedImage imageBuffer = imageMagnifyRatio(srcBuffer, ratio, ratio);
             ImageIO.write(imageBuffer, prefix, out);
         } catch (Exception e) {
             e.printStackTrace();
@@ -184,7 +186,7 @@ public final class OperateImage {
             // 构造Image对象
             BufferedImage srcBuffer = ImageIO.read(file);
             // 按比例缩减图像
-            BufferedImage imageBuffer = ImageUtil.imageResize(srcBuffer, width, height);
+            BufferedImage imageBuffer = imageResize(srcBuffer, width, height);
             ImageIO.write(imageBuffer, prefix, out);
         } catch (Exception e) {
             e.printStackTrace();
@@ -863,6 +865,74 @@ public final class OperateImage {
                 fos.close();
             }
         }
+    }
+
+    /**
+     * 重新设定图像的长高宽
+     * @param originalImage 图像数据
+     * @param width 宽
+     * @param height 高
+     * @return
+     */
+    private static BufferedImage imageResize(BufferedImage originalImage, Integer width,Integer height){
+        if(width <= 0){
+            width =1;
+        }
+        if(height <= 0){
+            height =1;
+        }
+        BufferedImage newImage = new BufferedImage(width,height,originalImage.getType());
+        Graphics g = newImage.getGraphics();
+        g.drawImage(originalImage,0,0,width,height,null);
+        g.dispose();
+        return newImage;
+    }
+
+    /**
+     * 按照给点的比例放大图像
+     * 当缩减比例小于等于0时不发生任何变化
+     * @param originalImage 图像数据
+     * @param withdRatio 宽度缩减比例
+     * @param heightRatio 高度缩减比例
+     * @return 图像数据
+     */
+    private static BufferedImage imageMagnifyRatio(BufferedImage originalImage, Integer withdRatio,Integer heightRatio){
+        if(withdRatio <= 0){
+            withdRatio =1;
+        }
+        if(heightRatio <= 0){
+            heightRatio =1;
+        }
+        int width = originalImage.getWidth()*withdRatio;
+        int height = originalImage.getHeight()*heightRatio;
+        BufferedImage newImage = new BufferedImage(width,height,originalImage.getType());
+        Graphics g = newImage.getGraphics();
+        g.drawImage(originalImage,0,0,width,height,null);
+        g.dispose();
+        return newImage;
+    }
+    /**
+     * 按照给点的比例缩小图像
+     * 当缩减比例小于等于0时不发生任何变化
+     * @param originalImage 图像数据
+     * @param withdRatio 宽度缩减比例
+     * @param heightRatio 高度缩减比例
+     * @return 图像数据
+     */
+    private static BufferedImage imageShrinkRatio(BufferedImage originalImage, Integer withdRatio,Integer heightRatio){
+        if(withdRatio <= 0){
+            withdRatio =1;
+        }
+        if(heightRatio <= 0){
+            heightRatio =1;
+        }
+        int width = originalImage.getWidth()/withdRatio;
+        int height = originalImage.getHeight()/heightRatio;
+        BufferedImage newImage = new BufferedImage(width,height,originalImage.getType());
+        Graphics g = newImage.getGraphics();
+        g.drawImage(originalImage,0,0,width,height,null);
+        g.dispose();
+        return newImage;
     }
 
 }
