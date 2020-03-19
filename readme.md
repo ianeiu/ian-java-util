@@ -1,4 +1,4 @@
-# ianeiu-com.ianeiu.utils
+# ian-java-util
 > 整理收集常用的java工具类
 
 ## 项目环境
@@ -43,6 +43,8 @@
 * `com.ianeiu.utils.ZipUtil`	ZIP
 * `com.ianeiu.utils.paramvalid`	参数校验
 
-* `com.ianeiu.demo.gson`	    gsonDemo
 * `com.ianeiu.demo.fastjson`	fastjsonDemo
+* `com.ianeiu.demo.hutool`	    hutoolDemo
+* `com.ianeiu.demo.gson`	    gsonDemo
 * `com.ianeiu.demo.jodatime`	jodaTest
+* `com.ianeiu.demo.lombok`	    lombokTest
