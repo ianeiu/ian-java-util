@@ -26,7 +26,6 @@
 * `com.ianeiu.utils.FTPUtil`	FTP
 * `com.ianeiu.utils.http`		http
 * `com.ianeiu.utils.GitUtils`	git
-* `com.ianeiu.utils.ImageUtil`	图片相关的操作
 * `com.ianeiu.utils.ListUtils`	list
 * `com.ianeiu.utils.MapCoordinateUtil`	经纬度
 * `com.ianeiu.utils.NumberUtil`	数字操作

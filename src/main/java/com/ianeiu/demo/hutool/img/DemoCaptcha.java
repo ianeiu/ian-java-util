@@ -1,4 +1,4 @@
-package com.ianeiu.demo.hutool.captcha;
+package com.ianeiu.demo.hutool.img;
 
 import cn.hutool.captcha.CaptchaUtil;
 import cn.hutool.captcha.CircleCaptcha;
