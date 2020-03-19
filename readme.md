@@ -30,6 +30,7 @@
 * `com.ianeiu.utils.ListUtils`	list
 * `com.ianeiu.utils.MapCoordinateUtil`	经纬度
 * `com.ianeiu.utils.NumberUtil`	数字操作
+* `com.ianeiu.utils.PDFUtil`	PDF工具
 * `com.ianeiu.utils.PropertiesUtil`	Prop
 * `com.ianeiu.utils.RandomUtil`	随机字符串
 * `com.ianeiu.utils.RegexUtils`	正则工具类
