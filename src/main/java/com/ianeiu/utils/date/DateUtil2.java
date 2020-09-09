@@ -1,10 +1,12 @@
 package com.ianeiu.utils.date;
 
 import java.sql.Time;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * 时间工具类
@@ -303,5 +305,61 @@ public class DateUtil2 {
 		return currYearLast;
 	}
 
-	
+	/**
+	 * 获得当前月第一天，格式为2010-08-01
+	 *
+	 * @return
+	 * @throws java.text.ParseException
+	 */
+	public static Date getFirstDayOfMonth() throws java.text.ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar lastDate = Calendar.getInstance();
+		lastDate.set(Calendar.DATE, 1);
+		return lastDate.getTime();
+	}
+
+	/**
+	 * 获得当前月最后一天，格式为2010-08-31
+	 *
+	 * @return
+	 * @throws java.text.ParseException
+	 */
+	public static Date getLastDayOfMonth() throws java.text.ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar lastDate = Calendar.getInstance();
+		lastDate.set(Calendar.DATE, 1);
+		lastDate.add(Calendar.MONTH, 1);
+		lastDate.add(Calendar.DATE, -1);
+		return lastDate.getTime();
+	}
+
+	/**
+	 * 获得上个月第一天，格式为2010-07-01
+	 *
+	 * @return
+	 * @throws java.text.ParseException
+	 */
+	public static Date getPreviousMonthFirst() throws java.text.ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar lastDate = Calendar.getInstance();
+		lastDate.set(Calendar.DATE, 1);
+		lastDate.add(Calendar.MONTH, -1);
+		return lastDate.getTime();
+	}
+
+	/**
+	 * 获得上个月最后一天，格式为2010-07-31
+	 *
+	 * @return
+	 * @throws java.text.ParseException
+	 */
+	public static Date getPreviousMonthEnd() throws java.text.ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar lastDate = Calendar.getInstance();
+		lastDate.add(Calendar.MONTH, -1);
+		lastDate.set(Calendar.DATE, 1);
+		lastDate.roll(Calendar.DATE, -1);
+		return lastDate.getTime();
+	}
+
 }
