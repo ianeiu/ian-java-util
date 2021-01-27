@@ -28,6 +28,7 @@
 * `com.ianeiu.utils.GitUtils`	git
 * `com.ianeiu.utils.ListUtils`	list
 * `com.ianeiu.utils.MapCoordinateUtil`	经纬度
+* `com.ianeiu.utils.NetworkUtils`       （本地）网络工具类
 * `com.ianeiu.utils.NumberUtil`	数字操作
 * `com.ianeiu.utils.PDFUtil`	PDF工具
 * `com.ianeiu.utils.PropertiesUtil`	Prop
